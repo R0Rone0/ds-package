@@ -8,8 +8,8 @@
 ########################################
 def reg_bools(data, col, val):
     """Create new columns in dataframe to convert plaintext data to boolean values for regression."""
-    data.loc[data[col] == val, val] = '1'
-    data.loc[data[col] != val, val] = '0'
+    data.loc[data[col] == val, str(col + '_' + val)] = '1'
+    data.loc[data[col] != val, str(col + '_' + val)] = '0'
 
 
 def scrape_uniques(data, col):
